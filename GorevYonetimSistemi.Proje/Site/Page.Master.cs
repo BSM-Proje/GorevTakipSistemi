@@ -22,8 +22,16 @@ namespace GorevYonetimSistemi.Proje.Site
             if (!IsPostBack)
             {
                 KullaniciBildirimListe(kisiId);
+                ToplantilariListele(kisiId);
             }
 
+        }
+
+        private void ToplantilariListele(int kisiId)
+        {
+            var liste = _metotDal.ToplantiListele(kisiId);
+            rptToplantiBildirim.DataSource = liste;
+            rptToplantiBildirim.DataBind();
         }
 
         private void KullaniciBildirimListe(int kisiId)

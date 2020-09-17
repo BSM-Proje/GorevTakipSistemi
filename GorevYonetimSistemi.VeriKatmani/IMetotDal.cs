@@ -11,7 +11,7 @@ namespace GorevYonetimSistemi.VeriKatmani
     {
         List<KullaniciTurModel> KullaniciTurListe(int kisiId, int kullaniciTurId);
         List<GorevAtama> GorevAtama();
-        List<ToplantiDetayModel> ToplantiDetay();
+        List<ToplantiDetayModel> ToplantiDetay(int? toplantiId);
         List<ToplantiAtamaModel> ToplantiAtama();
         List<KullaniciModel> KullaniciListele();
     }

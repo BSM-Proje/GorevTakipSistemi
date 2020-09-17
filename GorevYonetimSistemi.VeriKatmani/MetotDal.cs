@@ -10,6 +10,7 @@ namespace GorevYonetimSistemi.VeriKatmani
 {
     public class MetotDal : IMetotDal
     {
+        
         public List<KullaniciTurModel> KullaniciTurListe(int kisiId, int kullaniciTurId)
         {
 
@@ -33,13 +34,22 @@ namespace GorevYonetimSistemi.VeriKatmani
             }
         }
 
-        public List<ToplantiDetayModel> ToplantiDetay()
+        public List<ToplantiDetayModel> ToplantiDetay(int? toplantiId)
         {
+            
             using (EntityContext context = new EntityContext())
             {
-                var toplantiDetayListe = context.Database.SqlQuery<ToplantiDetayModel>("ToplantiDetayListe").ToList();
-
-                return toplantiDetayListe;
+                List<ToplantiDetayModel> toplantiDetayListe;
+                if (toplantiId != null)
+                {
+                    toplantiDetayListe = context.Database.SqlQuery<ToplantiDetayModel>("ToplantiDetayListe").ToList();
+                    return toplantiDetayListe;
+                }
+                else
+                {
+                    toplantiDetayListe = context.Database.SqlQuery<ToplantiDetayModel>("ToplantiDetayListe").Where(p=>p.ToplantiId==toplantiId).ToList();
+                    return toplantiDetayListe;
+                }
             }
         }
 

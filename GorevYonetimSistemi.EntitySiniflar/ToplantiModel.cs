@@ -8,6 +8,7 @@ namespace GorevYonetimSistemi.EntitySiniflar
 {
     public class ToplantiModel
     {
+        public int ToplantiId { get; set; }
         public string ToplantiAdi { get; set; }
         public string ToplantiIcerigi { get; set; }
         public DateTime SonTarihSaat  { get; set; }
