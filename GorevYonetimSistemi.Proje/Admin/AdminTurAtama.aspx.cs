@@ -61,7 +61,7 @@ namespace GorevYonetimSistemi.Proje.Admin
 
             KullaniciTurAtamaListele();
             lblSonuc.Visible = true;
-            lblSonuc.InnerText = "Kullanıcı Tür Atama Eklendi!";
+            lblSonuc.InnerText = "Kullanıcı Tür Atama Eklendi";
         }
 
 
