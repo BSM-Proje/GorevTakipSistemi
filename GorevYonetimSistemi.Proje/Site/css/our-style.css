@@ -1,0 +1,39 @@
+select.js-example-data-array {
+    width: 300% !important;
+}
+
+li.nav-item a:visited {
+    background-color: #4099ff !important;
+    font-weight: bold;
+}
+
+li.nav-item a[data-target] {
+    color: #7b8aff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#selectKullaniciTuru {
+    width: 100% !important;
+}
+
+ul#pills-tab li {
+    margin-bottom: 5px;
+}
+
+    ul#pills-tab li:first-child {
+        margin-top: 15px;
+    }
+
+label.float-label {
+    margin-top: 10px;
+}
+
+.hataLabel {
+    font-size: large !important;
+    margin: 25% 0% 25% 0%;
+}
+
+p.email-content h4{
+    display: inline-block;
+}
