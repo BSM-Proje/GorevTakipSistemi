@@ -111,20 +111,22 @@
                                             </li>
                                             <asp:ListView runat="server" ID="lvBildirimler">
                                                 <ItemTemplate>
-                                                <li>
-                                                    <div class="media">
-                                                        <img class="img-radius" src="/Site/jpg/avatar-4.jpg"
-                                                            alt="Generic placeholder image">
-                                                        <a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>BildirimDetay.aspx?bildirimId=<%# Eval("BildirimId") %>">
-                                                        <div class="media-body">
-                                                            <h5 class="notification-user"></h5>
-                                                            <p class="notification-msg">
-                                                                <%#Eval("BildirimIcerik") %>
-                                                            </p>
-                                                            <span class="notification-time"><%#Eval("BildirimGondermeTarih") %></span>
-                                                        </div></a>
-                                                    </div>
-                                                </li>
+                                                    <a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>BildirimDetay.aspx?bildirimId=<%# Eval("BildirimId") %>">
+                                                        <li>
+                                                            <div class="media">
+                                                                <%--<img class="img-radius" src="/Site/jpg/avatar-4.jpg"
+                                                                    alt="Generic placeholder image">--%>
+
+                                                                <div class="media-body">
+                                                                    <h5 class="notification-user"></h5>
+                                                                    <p class="notification-msg">
+                                                                        <%#Eval("BildirimIcerik") %>
+                                                                    </p>
+                                                                    <span class="notification-time"><%#Eval("BildirimGondermeTarih") %></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </a>
                                                 </ItemTemplate>
                                             </asp:ListView>
                                             <li>
@@ -135,6 +137,48 @@
                                         </ul>
                                     </div>
                                 </li>
+
+                                <li class="header-notification">
+                                    <div class="dropdown-primary dropdown">
+                                        <div class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="feather icon-users"></i>
+                                            <span class="badge bg-c-purple">5</span>
+                                        </div>
+                                        <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn"
+                                            data-dropdown-out="fadeOut">
+                                            <li>
+                                                <h6>Toplantılar</h6>
+                                                <label class="label label-danger">Yaklaşan Toplantılar</label>
+                                            </li>
+                                            <asp:Repeater runat="server" ID="rptToplantiBildirim">
+                                                <ItemTemplate>
+                                                    <a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>ToplantiDetay.aspx?toplantiId=<%# Eval("ToplantiId") %>">
+                                                        <li>
+                                                            <div class="media">
+                                                                <%--<img class="img-radius" src="/Site/jpg/avatar-4.jpg"
+                                                                alt="Generic placeholder image">--%>
+                                                                <i class="fa fa-bullhorn mr-2 text-danger"></i>
+                                                                <div class="media-body">
+                                                                    <h5 class="notification-user"></h5>
+                                                                    <p class="notification-msg">
+                                                                        <%#Eval("ToplantiAdi") %>
+                                                                    </p>
+                                                                    <span class="notification-time"><%#Eval("SonTarihSaat") %></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </a>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                            <li>
+                                                <a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>Bildirim.aspx"
+                                                    class="btn waves-effect waves-light btn-github btn-square">Tümünü göster
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
                                 <li class="header-notification">
                                     <div class="dropdown-primary dropdown">
                                         <div class="displayChatbox dropdown-toggle" data-toggle="dropdown">
@@ -429,7 +473,7 @@
     </form>
     <script type="88add89075ed2b878b934720-text/javascript" src="/Site/js/jquery.min.js"></script>
     <script type="88add89075ed2b878b934720-text/javascript" src="/Site/js/jquery-ui.min.js"></script>
-<script type="88add89075ed2b878b934720-text/javascript" src="/Site/js/popper.min.js"></script>
+    <script type="88add89075ed2b878b934720-text/javascript" src="/Site/js/popper.min.js"></script>
     <script type="88add89075ed2b878b934720-text/javascript" src="/Site/js/bootstrap.min.js"></script>
 
     <script src="/Site/js/waves.min.js" type="88add89075ed2b878b934720-text/javascript"></script>

@@ -83,6 +83,7 @@
     <Content Include="Admin\AdminKullaniciKayit.aspx" />
     <Content Include="Admin\AdminOkul.aspx" />
     <Content Include="Admin\AdminToplanti.aspx" />
+    <Content Include="Admin\AdminToplantiDetay.aspx" />
     <Content Include="Admin\AdminTurAtama.aspx" />
     <Content Include="Admin\AnaBilimDallar.aspx" />
     <Content Include="Admin\IdariGorevUnvanlar.aspx" />
@@ -2274,6 +2275,7 @@
     <Content Include="User Kontrol\UserBildirimDetay.ascx" />
     <Content Include="User Kontrol\UserGorev.ascx" />
     <Content Include="User Kontrol\UserToplanti.ascx" />
+    <Content Include="User Kontrol\UserToplantiDetay.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2325,6 +2327,13 @@
     </Compile>
     <Compile Include="Admin\AdminToplanti.aspx.designer.cs">
       <DependentUpon>AdminToplanti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminToplantiDetay.aspx.cs">
+      <DependentUpon>AdminToplantiDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminToplantiDetay.aspx.designer.cs">
+      <DependentUpon>AdminToplantiDetay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminTurAtama.aspx.cs">
       <DependentUpon>AdminTurAtama.aspx</DependentUpon>
@@ -2499,6 +2508,13 @@
     </Compile>
     <Compile Include="User Kontrol\UserToplanti.ascx.designer.cs">
       <DependentUpon>UserToplanti.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User Kontrol\UserToplantiDetay.ascx.cs">
+      <DependentUpon>UserToplantiDetay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Kontrol\UserToplantiDetay.ascx.designer.cs">
+      <DependentUpon>UserToplantiDetay.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

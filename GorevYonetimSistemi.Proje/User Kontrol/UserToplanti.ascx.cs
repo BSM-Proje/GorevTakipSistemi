@@ -47,7 +47,7 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
 
         private void ToplantiDetayListe()
         {
-            var toplantiDetayListele = _metotDal.ToplantiDetay();
+            var toplantiDetayListele = _metotDal.ToplantiDetay(null);
             lvToplantiDetay.DataSource = toplantiDetayListele;
             lvToplantiDetay.DataBind();
         }
