@@ -108,7 +108,6 @@ namespace GorevYonetimSistemi.Proje.Admin
             {
                 Ad = kullaniciAdi.Value,
                 Soyad = kullaniciSoyadi.Value,
-                
                 Email = email.Value,
                 Sifre = sifre.Value,
                 Fotograf = fotograf.Value,

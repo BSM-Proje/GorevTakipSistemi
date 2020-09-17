@@ -83,6 +83,7 @@
     <Content Include="Admin\AdminKullaniciKayit.aspx" />
     <Content Include="Admin\AdminOkul.aspx" />
     <Content Include="Admin\AdminToplanti.aspx" />
+    <Content Include="Admin\AdminTurAtama.aspx" />
     <Content Include="Admin\AnaBilimDallar.aspx" />
     <Content Include="Admin\IdariGorevUnvanlar.aspx" />
     <Content Include="Admin\Unvanlar.aspx" />
@@ -2324,6 +2325,13 @@
     </Compile>
     <Compile Include="Admin\AdminToplanti.aspx.designer.cs">
       <DependentUpon>AdminToplanti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminTurAtama.aspx.cs">
+      <DependentUpon>AdminTurAtama.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminTurAtama.aspx.designer.cs">
+      <DependentUpon>AdminTurAtama.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AnaBilimDallar.aspx.cs">
       <DependentUpon>AnaBilimDallar.aspx</DependentUpon>
