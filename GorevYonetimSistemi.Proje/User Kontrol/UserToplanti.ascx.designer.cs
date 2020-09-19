@@ -87,6 +87,15 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSonuc;
 
         /// <summary>
+        /// btnDeneme control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnDeneme;
+
+        /// <summary>
         /// btnKaydet control.
         /// </summary>
         /// <remarks>

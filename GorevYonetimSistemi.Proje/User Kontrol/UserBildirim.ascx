@@ -1,5 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserBildirim.ascx.cs" Inherits="GorevYonetimSistemi.Proje.User_Kontrol.UserBildirim" %>
-
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserBildirim.ascx.cs" clientidmode="Static" Inherits="GorevYonetimSistemi.Proje.User_Kontrol.UserBildirim" %>
 <div class="card-block email-card">
     <div class="row">
         <div class="col-lg-12 col-xl-3">
@@ -101,11 +100,13 @@
                                                     <div class="check-star">
                                                         <div class="checkbox-fade fade-in-primary checkbox">
                                                             <label>
-                                                                <input type="checkbox" value="">
+                                                                <input type="checkbox" value="" runat="server" id="tbx">
                                                                 <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
                                                             </label>
                                                         </div>
-                                                        <i class="icofont icofont-star text-warning"></i>
+                                                        <asp:panel runat="server" id="pnl">
+                                                       
+                                                        </asp:panel>
                                                     </div>
                                                 </td>
 
@@ -423,4 +424,3 @@
         </div>
     </div>
 </div>
-
