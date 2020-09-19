@@ -25,7 +25,7 @@
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">
-                                Unvan Adı
+                                Ünvan Adı
                             </label>
                             <div class="col-sm-4">
                                 <input type="text"
