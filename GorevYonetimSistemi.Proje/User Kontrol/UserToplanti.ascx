@@ -132,7 +132,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 label label-success" id="lblSonuc" runat="server" visible="False"></label>
                                             <div class="col-sm-6 ml-5">
-
+                                                <button runat="server" ID="btnDeneme"></button>
                                                 <button type="submit"
                                                     class="btn btn-primary m-b-0" runat="server" id="btnKaydet" onserverclick="btnKaydet_OnServerClick">
                                                     Kaydet

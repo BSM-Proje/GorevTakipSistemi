@@ -1,6 +1,7 @@
 ﻿using GorevYonetimSistemi.EntitySiniflar;
 using GorevYonetimSistemi.VeriKatmani;
 using System;
+using System.Net.Mail;
 using System.Web.UI.WebControls;
 
 namespace GorevYonetimSistemi.Proje.User_Kontrol
@@ -33,8 +34,6 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
             selectKisiler.DataTextField = "Ad";
             selectKisiler.DataValueField = "KisiId";
             selectKisiler.DataBind();
-
-            
 
         }
 
@@ -146,15 +145,20 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         protected void btnAtamaKaydet_OnServerClick(object sender, EventArgs e)
         {
             var atayanKisiId = Session["KullaniciId"];
-
+            
             for (int i = 0; i < tbxIlgiliKisiler.Value.Split(',').Length; i++)
             {
+                int fkIlgiliKisiId = Convert.ToInt32(tbxIlgiliKisiler.Value.Split(',')[i]);
                 _toplantiAtamaDal.Ekle(new ToplantiAtama
                 {
-                    FkIlgiliKisiId = Convert.ToInt32(tbxIlgiliKisiler.Value.Split(',')[i]),
+                    FkIlgiliKisiId = fkIlgiliKisiId,
                     FkToplantiId = Convert.ToInt32(selectToplantiAtamaTa.Value),
                     FkAtayanKisiId = int.Parse(atayanKisiId.ToString())
                 });
+                var kisi = _kullaniciDal.Listele<Kullanici>().Find(p=>p.KisiId == fkIlgiliKisiId);
+                var toplanti = _toplantiDal.Listele<Toplanti>().Find(t => t.ToplantiId == int.Parse(selectToplantiAtamaTa.Value));
+                MailGonder(kisi.Email, toplanti.ToplantiAdi, toplanti.SonTarihSaat,toplanti.Yer);
+                
             }
 
 
@@ -163,6 +167,32 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
 
             ToplantiAtamaListe();
 
+            
+
+        }
+
+        private void MailGonder(string email, string toplantiAdi, DateTime toplantiTarihi, string toplantiYeri)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("mskuproje@gmail.com");
+                mail.To.Add(email);
+                mail.Subject = "Toplantı Ataması";
+                mail.Body = String.Format("{0} adlı toplantınız {1:d} tarihinde ve {1:t} saatinde {2}'de yapılacaktır.", toplantiAdi, toplantiTarihi, toplantiYeri);
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("mskuproje@gmail.com", "Msku2020.");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }
