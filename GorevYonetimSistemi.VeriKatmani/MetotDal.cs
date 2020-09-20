@@ -120,6 +120,16 @@ namespace GorevYonetimSistemi.VeriKatmani
             }
         }
 
+        public List<BildirimAtamaModel> BildirimDetay(int kisiId)
+        {
+            using (EntityContext context = new EntityContext())
+            {
+                SqlParameter parameter = new SqlParameter("@KisiId", kisiId);
+                var bildirimDetay = context.Database
+                    .SqlQuery<BildirimAtamaModel>("BildirimListe @KisiId", parameter).ToList();
+                return bildirimDetay;
+            }
+        }
 
     }
 }

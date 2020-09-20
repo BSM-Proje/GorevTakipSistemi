@@ -129,19 +129,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AdminAnaBilimDallar.aspx" />
     <Content Include="Admin\AdminBildirim.aspx" />
     <Content Include="Admin\AdminBildirimDetay.aspx" />
     <Content Include="Admin\AdminBolum.aspx" />
     <Content Include="Admin\AdminGorev.aspx" />
+    <Content Include="Admin\AdminIdariGorevUnvanlar.aspx" />
     <Content Include="Admin\AdminKullaniciKayit.aspx" />
     <Content Include="Admin\AdminOkul.aspx" />
     <Content Include="Admin\AdminToplanti.aspx" />
     <Content Include="Admin\AdminToplantiDetay.aspx" />
     <Content Include="Admin\AdminTurAtama.aspx" />
-    <Content Include="Admin\AnaBilimDallar.aspx" />
-    <Content Include="Admin\IdariGorevUnvanlar.aspx" />
-    <Content Include="Admin\Unvanlar.aspx" />
+    <Content Include="Admin\AdminUnvanlar.aspx" />
     <Content Include="Admin\WebForm1.aspx" />
+    <Content Include="bin\Microsoft.Data.SqlClient.dll" />
+    <Content Include="bin\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="bin\Microsoft.Identity.Client.dll" />
+    <Content Include="bin\Microsoft.IdentityModel.JsonWebTokens.dll" />
+    <Content Include="bin\Microsoft.IdentityModel.Logging.dll" />
+    <Content Include="bin\Microsoft.IdentityModel.Protocols.dll" />
+    <Content Include="bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+    <Content Include="bin\Microsoft.IdentityModel.Tokens.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Quartz.dll" />
+    <Content Include="bin\System.Buffers.dll" />
+    <Content Include="bin\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\System.IdentityModel.Tokens.Jwt.dll" />
+    <Content Include="bin\System.Memory.dll" />
+    <Content Include="bin\System.Numerics.Vectors.dll" />
+    <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
     <Content Include="Site\css\fSelect.css" />
     <Content Include="Site\Default.aspx" />
     <Content Include="bin\EntityFramework.dll" />
@@ -2333,6 +2349,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminAnaBilimDallar.aspx.cs">
+      <DependentUpon>AdminAnaBilimDallar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAnaBilimDallar.aspx.designer.cs">
+      <DependentUpon>AdminAnaBilimDallar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminBildirim.aspx.cs">
       <DependentUpon>AdminBildirim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2360,6 +2383,13 @@
     </Compile>
     <Compile Include="Admin\AdminGorev.aspx.designer.cs">
       <DependentUpon>AdminGorev.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminIdariGorevUnvanlar.aspx.cs">
+      <DependentUpon>AdminIdariGorevUnvanlar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminIdariGorevUnvanlar.aspx.designer.cs">
+      <DependentUpon>AdminIdariGorevUnvanlar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminKullaniciKayit.aspx.cs">
       <DependentUpon>AdminKullaniciKayit.aspx</DependentUpon>
@@ -2396,26 +2426,12 @@
     <Compile Include="Admin\AdminTurAtama.aspx.designer.cs">
       <DependentUpon>AdminTurAtama.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\AnaBilimDallar.aspx.cs">
-      <DependentUpon>AnaBilimDallar.aspx</DependentUpon>
+    <Compile Include="Admin\AdminUnvanlar.aspx.cs">
+      <DependentUpon>AdminUnvanlar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AnaBilimDallar.aspx.designer.cs">
-      <DependentUpon>AnaBilimDallar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\IdariGorevUnvanlar.aspx.cs">
-      <DependentUpon>IdariGorevUnvanlar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\IdariGorevUnvanlar.aspx.designer.cs">
-      <DependentUpon>IdariGorevUnvanlar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Unvanlar.aspx.cs">
-      <DependentUpon>Unvanlar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Unvanlar.aspx.designer.cs">
-      <DependentUpon>Unvanlar.aspx</DependentUpon>
+    <Compile Include="Admin\AdminUnvanlar.aspx.designer.cs">
+      <DependentUpon>AdminUnvanlar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

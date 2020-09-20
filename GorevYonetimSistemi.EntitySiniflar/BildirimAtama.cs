@@ -21,5 +21,6 @@ namespace GorevYonetimSistemi.EntitySiniflar
         [ForeignKey("FkBildirimId")]
         public virtual Bildirim Bildirim { get; set; }
         public DateTime? GondermeTarih { get; set; }
+        
     }
 }

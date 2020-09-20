@@ -10,6 +10,8 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         private MetotDal _metotDal = new MetotDal();
         IslemlerDal<Atama> _gorevAtamaDal=new IslemlerDal<Atama>();
         IslemlerDal<Kullanici> _kullaniciDal=new IslemlerDal<Kullanici>();
+        IslemlerDal<Bildirim> _bildirimDal = new IslemlerDal<Bildirim>();
+        IslemlerDal<BildirimAtama> _bildirimAtamaDal = new IslemlerDal<BildirimAtama>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -69,6 +71,24 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
                     FkGorevId = Convert.ToInt32(selectGorevAtama.Value),
                     FkAtayanKisiId = int.Parse(atayanKisiId.ToString())
                 });
+
+                _bildirimDal.Ekle(new Bildirim()
+                {
+                    Icerik = selectGorevAtama.Items[selectGorevAtama.SelectedIndex].Text,
+                    FkGorevId = Convert.ToInt32(selectGorevAtama.Value),
+                    
+                    
+                });
+
+
+                _bildirimAtamaDal.Ekle(new BildirimAtama()
+                {
+
+                });
+
+
+
+
             }
 
 

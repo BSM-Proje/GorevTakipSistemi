@@ -1,0 +1,85 @@
+﻿Uninstalling assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Uninstalling assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Installing assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Rolling back assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Uninstalling assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Removing EventLog source Service1.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Uninstalling assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+   logfile = H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.InstallLog

@@ -225,6 +225,9 @@ namespace GorevYonetimSistemi.VeriKatmani
                 context.ToplantiAtama.Add(toplantiAtama);
             }
 
+            context.SaveChanges();
+
+
             base.Seed(context);
         }
     }

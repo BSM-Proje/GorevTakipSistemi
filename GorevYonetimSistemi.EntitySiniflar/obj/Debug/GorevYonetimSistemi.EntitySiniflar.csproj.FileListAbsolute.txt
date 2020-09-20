@@ -112,3 +112,13 @@ C:\Users\Halil~\source\repos\GorevTakipSistemi\GorevYonetimSistemi.EntitySinifla
 C:\Users\Halil~\source\repos\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\obj\Debug\GorevYonetimSistemi.EntitySiniflar.csproj.CopyComplete
 C:\Users\Halil~\source\repos\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\obj\Debug\GorevYonetimSistemi.EntitySiniflar.dll
 C:\Users\Halil~\source\repos\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\obj\Debug\GorevYonetimSistemi.EntitySiniflar.pdb
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\bin\Debug\GorevYonetimSistemi.EntitySiniflar.dll.config
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\bin\Debug\GorevYonetimSistemi.EntitySiniflar.dll
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\bin\Debug\GorevYonetimSistemi.EntitySiniflar.pdb
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\bin\Debug\EntityFramework.xml
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\bin\Debug\EntityFramework.SqlServer.xml
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\obj\Debug\GorevYonetimSistemi.EntitySiniflar.csprojAssemblyReference.cache
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\obj\Debug\GorevYonetimSistemi.EntitySiniflar.csproj.CoreCompileInputs.cache
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\obj\Debug\GorevYonetimSistemi.EntitySiniflar.csproj.CopyComplete
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\obj\Debug\GorevYonetimSistemi.EntitySiniflar.dll
+H:\GithubProjects\GorevTakipSistemi\GorevYonetimSistemi.EntitySiniflar\obj\Debug\GorevYonetimSistemi.EntitySiniflar.pdb

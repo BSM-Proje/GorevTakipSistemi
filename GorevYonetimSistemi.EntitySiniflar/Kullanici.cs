@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace GorevYonetimSistemi.EntitySiniflar
 {
+    
     [Table("Kullanicilar")]
     public class Kullanici
     {

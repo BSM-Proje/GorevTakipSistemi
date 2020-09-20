@@ -1,0 +1,9 @@
+H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe.config
+H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.exe
+H:\GithubProjects\GorevTakipSistemi\Mesaj\bin\Debug\Mesaj.pdb
+H:\GithubProjects\GorevTakipSistemi\Mesaj\obj\Debug\Mesaj.csprojAssemblyReference.cache
+H:\GithubProjects\GorevTakipSistemi\Mesaj\obj\Debug\Mesaj.csproj.CoreCompileInputs.cache
+H:\GithubProjects\GorevTakipSistemi\Mesaj\obj\Debug\Mesaj.exe
+H:\GithubProjects\GorevTakipSistemi\Mesaj\obj\Debug\Mesaj.pdb
+H:\GithubProjects\GorevTakipSistemi\Mesaj\obj\Debug\Mesaj.ProjectInstaller.resources
+H:\GithubProjects\GorevTakipSistemi\Mesaj\obj\Debug\Mesaj.csproj.GenerateResource.cache
