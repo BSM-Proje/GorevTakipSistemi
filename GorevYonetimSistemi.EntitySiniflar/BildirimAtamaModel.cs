@@ -8,14 +8,39 @@ namespace GorevYonetimSistemi.EntitySiniflar
 {
     public class BildirimAtamaModel
     {
+        private DateTime _tarih;
         public int BildirimId { get; set; }
         public string BildirimIcerik { get; set; }
         public bool BildirimOkumaDurum { get; set; }
         public DateTime BildirimOkumaTarih { get; set; }
         public int BildirimHatirlatmaSayisi { get; set; }
+        public int GorevId { get; set; }
         public string GorevAdi { get; set; }
+        
         public string GorevIcerigi { get; set; }
-        public DateTime GorevSonTarihSaat { get; set; }
+        public bool GorevOnayDurumu { get; set; }
+
+        public DateTime GorevSonTarihSaat
+        {
+            get
+            {
+                return _tarih;
+            }
+            set
+            {
+                if (value != null )
+                {
+                    _tarih = (DateTime)value;
+                }
+
+                else
+                {
+                    _tarih = DateTime.MinValue;
+                }
+                
+            }
+        }
+
         public DateTime BildirimGondermeTarih { get; set; }
     }
 }

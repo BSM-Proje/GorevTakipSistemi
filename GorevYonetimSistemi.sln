@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GorevYonetimSistemi.VeriKat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GorevYonetimSistemi.EntitySiniflar", "GorevYonetimSistemi.EntitySiniflar\GorevYonetimSistemi.EntitySiniflar.csproj", "{44B7C0B1-A891-4467-A494-83DEDDBE96E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesaj", "Mesaj\Mesaj.csproj", "{50D18D45-7BF9-4932-B9D1-E80B4F0820BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{44B7C0B1-A891-4467-A494-83DEDDBE96E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44B7C0B1-A891-4467-A494-83DEDDBE96E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44B7C0B1-A891-4467-A494-83DEDDBE96E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D18D45-7BF9-4932-B9D1-E80B4F0820BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D18D45-7BF9-4932-B9D1-E80B4F0820BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D18D45-7BF9-4932-B9D1-E80B4F0820BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D18D45-7BF9-4932-B9D1-E80B4F0820BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

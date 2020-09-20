@@ -15,6 +15,24 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
     {
 
         /// <summary>
+        /// btnOnaylandi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnOnaylandi;
+
+        /// <summary>
+        /// btnOnaylanmadi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnOnaylanmadi;
+
+        /// <summary>
         /// lvOkunmayanBildirimler control.
         /// </summary>
         /// <remarks>
@@ -22,5 +40,32 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lvOkunmayanBildirimler;
+
+        /// <summary>
+        /// lvOnaylananlar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lvOnaylananlar;
+
+        /// <summary>
+        /// btnOnaylanmayan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnOnaylanmayan;
+
+        /// <summary>
+        /// lvOnaylanmayanlar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lvOnaylanmayanlar;
     }
 }
