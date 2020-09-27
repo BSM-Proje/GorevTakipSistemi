@@ -33,6 +33,15 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         protected global::System.Web.UI.HtmlControls.HtmlButton btnOnaylanmadi;
 
         /// <summary>
+        /// btnSil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSil;
+
+        /// <summary>
         /// lvOkunmayanBildirimler control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lvOkunmayanBildirimler;
+
+        /// <summary>
+        /// lvSilinenBildirimler control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lvSilinenBildirimler;
 
         /// <summary>
         /// lvOnaylananlar control.

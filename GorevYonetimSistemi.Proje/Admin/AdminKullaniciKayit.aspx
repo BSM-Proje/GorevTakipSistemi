@@ -16,7 +16,7 @@
 
     <div class="row">
                                                             <div class="col-sm-12">
-                                                                <div class="card">
+                                                                <div class="card">6
                                                                     <div class="card-header">
                                                                         <h5>Kullanıcı Ekle</h5>
                                                                     </div>
@@ -54,14 +54,6 @@
                                                                                 </div>
                                                                             </div>
                                                                             <div class="form-group row">
-                                                                                <label class="col-sm-2 col-form-label">Kullanıcı
-                                                                                    Tür</label>
-                                                                                <span class="col-sm-12 col-xl-4 m-b-30">
-                                                                                        <select runat="server" id="selectKullaniciTur" name="selectKullaniciTur" class="js-example-data-array col-sm-12">
-                                                                                            </select>
-                                                                                    </span>
-                                                                            </div>
-                                                                            <div class="form-group row">
                                                                                 <label class="col-sm-2 col-form-label">Email</label>
                                                                                 <div class="col-sm-4">
                                                                                     <input type="email" runat="server"
@@ -92,14 +84,14 @@
 
                                                                             <div class="form-group row">
                                                                                 <label class="col-sm-2 col-form-label">Okul</label>
-                                                                                <span class="col-sm-12 col-xl-4 m-b-30">
+                                                                                <span class="col-sm-4 col-xl-4 m-b-30">
                                                                                         <select runat="server" id="selectOkul" class="js-example-data-array col-sm-12">
                                                                                         </select>
                                                                                     </span>
                                                                             </div>
                                                                             <div class="form-group row">
                                                                                 <label class="col-sm-2 col-form-label">Bölüm</label>
-                                                                                <span class="col-sm-12 col-xl-4 m-b-30">
+                                                                                <span class="col-sm-4 col-xl-4 m-b-30">
                                                                                         <select runat="server" id="selectBolum" class="js-example-data-array col-sm-12">
                                                                                         </select>
                                                                                     </span>
@@ -107,14 +99,14 @@
                                                                             <div class="form-group row">
                                                                                 <label class="col-sm-2 col-form-label">Ana
                                                                                     Bilim Dalı</label>
-                                                                                <span class="col-sm-12 col-xl-4 m-b-30">
+                                                                                <span class="col-sm-4 col-xl-4 m-b-30">
                                                                                         <select runat="server" id="selectAnaBilimDali" class="js-example-data-array col-sm-12">
                                                                                         </select>
                                                                                     </span>
                                                                             </div>
                                                                             <div class="form-group row">
                                                                                 <label class="col-sm-2 col-form-label">Ünvan</label>
-                                                                                <span class="col-sm-12 col-xl-4 m-b-30">
+                                                                                <span class="col-sm-4 col-xl-4 m-b-30">
                                                                                         <select runat="server" id="selectUnvan" class="js-example-data-array col-sm-12">
                                                                                         </select>
                                                                                     </span>
@@ -122,7 +114,7 @@
                                                                             <div class="form-group row">
                                                                                 <label class="col-sm-2 col-form-label">İdari
                                                                                     Görev Ünvan</label>
-                                                                                <span class="col-sm-12 col-xl-4 m-b-30">
+                                                                                <span class="col-sm-4 col-xl-4 m-b-30">
                                                                                         <select runat="server" id="selectIdariGorevUnvan" class="js-example-data-array col-sm-12">
                                                                                         </select>
                                                                                     </span>
@@ -131,9 +123,8 @@
 
                                                                             <div class="form-group row">
                                                                                 <label class="col-sm-2"></label>
-                                                                                <div class="col-sm-4">
-                                                                                    <asp:Label runat="server" text="burdayım" ID="lblDeneme"></asp:Label>
-                                                                                    <button type="button" runat="server" id="btnKullaniciKaydet" OnServerClick="btnKullaniciKaydet_OnServerClick"
+                                                                                <div class="col-sm-6">
+                                                                                    <button type="button" runat="server" id="btnKullaniciKaydet" OnServerClick="btnKullaniciKaydet_OnServerClick" onclick="Temizle()"
                                                                                             class="btn btn-primary m-b-0">
                                                                                         Kaydet
                                                                                     </button>
@@ -143,11 +134,13 @@
                                                                                     <button runat="server" id="btnKullaniciGuncelle" class="btn waves-effect waves-light btn-warning btn-square" OnServerClick="btnKullaniciGuncelle_OnServerClick">
                                                                                         Güncelle
                                                                                     </button>
-                                                                                    <button runat="server" id="btnKullaniciTemizle" class="btn waves-effect waves-light btn-secondary btn-square" name="kullaniciTemizle">
+                                                                                    <button runat="server" id="btnKullaniciTemizle" class="btn waves-effect waves-light btn-secondary btn-square" name="kullaniciTemizle" onclick="Temizle()">
                                                                                         Temizle
                                                                                                
                                                                                     </button>
                                                                                 </div>
+                                                                                <label class="col-sm-3 label label-success" id="lblSonuc" runat="server" visible="False" style="height: 80%; font-size: 1.2rem;"></label>
+
 
                                                                             </div>
                                                                         </div>
@@ -218,8 +211,7 @@
                 $("#kullaniciId").val(rowData[0]);
                 $("#kullaniciAdi").val(rowData[1]);
                 $("#kullaniciSoyadi").val(rowData[2]);
-                $("#selectKullaniciTur").val(rowData[3]).trigger("change");
-                $("#email").val(rowData[4]);
+                $("#email").val(rowData[3]);
                 $("#fotograf").val(rowData[5]);
                 $("#selectOkul").val(rowData[6]).trigger("change");
                 $("#selectBolum").val(rowData[7]).trigger("change");
@@ -230,6 +222,20 @@
 
            
         });
+
+        var Temizle = function () {
+            $("#kullaniciId").val('');
+            $("#kullaniciAdi").val('');
+            $("#kullaniciSoyadi").val('');
+            $("#email").val('');
+            $("#fotograf").val('');
+            $("#selectOkul").val().trigger("change");
+            $("#selectBolum").val().trigger("change");
+            $("#selectAnaBilimDali").val().trigger("change");
+            $("#selectUnvan").val().trigger("change");
+            $("#selectIdariGorevUnvan").val().trigger("change");
+
+        };
     </script>
 
 </asp:Content>

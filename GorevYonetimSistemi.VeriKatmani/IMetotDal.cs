@@ -16,5 +16,7 @@ namespace GorevYonetimSistemi.VeriKatmani
         List<KullaniciModel> KullaniciListele();
 
         List<Tanim> TanimlariListele(int kullaniciTurId);
+        List<object> ToplantıAtamaGrup();
+        List<object> GorevAtamaGrup();
     }
 }

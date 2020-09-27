@@ -42,15 +42,6 @@ namespace GorevYonetimSistemi.Proje.Admin
         protected global::System.Web.UI.HtmlControls.HtmlInputText kullaniciSoyadi;
 
         /// <summary>
-        /// selectKullaniciTur control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect selectKullaniciTur;
-
-        /// <summary>
         /// email control.
         /// </summary>
         /// <remarks>
@@ -123,15 +114,6 @@ namespace GorevYonetimSistemi.Proje.Admin
         protected global::System.Web.UI.HtmlControls.HtmlSelect selectIdariGorevUnvan;
 
         /// <summary>
-        /// lblDeneme control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDeneme;
-
-        /// <summary>
         /// btnKullaniciKaydet control.
         /// </summary>
         /// <remarks>
@@ -166,6 +148,15 @@ namespace GorevYonetimSistemi.Proje.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnKullaniciTemizle;
+
+        /// <summary>
+        /// lblSonuc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSonuc;
 
         /// <summary>
         /// lvKullanicilar control.

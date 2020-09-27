@@ -15,6 +15,8 @@ namespace GorevYonetimSistemi.Proje.Admin
         IslemlerDal<KullaniciTur> _kullaniciTurDal = new IslemlerDal<KullaniciTur>();
         IslemlerDal<KullaniciTurAtama> _kullaniciTurAtamaDal = new IslemlerDal<KullaniciTurAtama>();
         SessionKontrol _sessionKontrol=new SessionKontrol();
+
+        string mesaj;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -69,8 +71,8 @@ namespace GorevYonetimSistemi.Proje.Admin
             });
 
             KullaniciTurAtamaListele();
-            lblSonuc.Visible = true;
-            lblSonuc.InnerText = "Kullanıcı Tür Atama Eklendi!";
+            mesaj = "Kullanıcı Tür Atama Eklendi!";
+            Sonuc(mesaj);
         }
 
 
@@ -78,9 +80,8 @@ namespace GorevYonetimSistemi.Proje.Admin
         {
            _kullaniciTurAtamaDal.Sil(int.Parse(turAtamaId.Value));
            KullaniciTurAtamaListele();
-           lblSonuc.Visible = true;
-           lblSonuc.InnerText = "Kullanıcı Tür Atama Silindi!";
-
+           mesaj = "Kullanıcı Tür Atama Silindi!";
+           Sonuc(mesaj);
         }
 
 
@@ -95,8 +96,14 @@ namespace GorevYonetimSistemi.Proje.Admin
 
 
             KullaniciTurAtamaListele();
+            mesaj= "Kullanıcı Tür Atama Güncellendi!";
+            Sonuc(mesaj);
+        }
+
+        private void Sonuc(string mesaj)
+        {
             lblSonuc.Visible = true;
-            lblSonuc.InnerText = "Kullanıcı Tür Atama Güncellendi!";
+            lblSonuc.InnerText = mesaj;
         }
     }
 }

@@ -35,7 +35,7 @@
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Ad Soyad</label>
-                            <span class="col-sm-12 col-xl-4 m-b-30">
+                            <span class="col-sm-4 col-xl-4 m-b-30">
                                 <select runat="server" id="selectKullanici" class="js-example-data-array col-sm-12">
                                 </select>
                             </span>
@@ -43,7 +43,7 @@
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Kullanıcı Tür</label>
-                            <span class="col-sm-12 col-xl-4 m-b-30">
+                            <span class="col-sm-4 col-xl-4 m-b-30">
                                 <select runat="server" id="selectKullaniciTur" class="js-example-data-array col-sm-12">
                                 </select>
                             </span>

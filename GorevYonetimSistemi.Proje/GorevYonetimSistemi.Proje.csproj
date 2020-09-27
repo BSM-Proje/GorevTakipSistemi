@@ -134,6 +134,7 @@
     <Content Include="Admin\AdminBildirimDetay.aspx" />
     <Content Include="Admin\AdminBolum.aspx" />
     <Content Include="Admin\AdminGorev.aspx" />
+    <Content Include="Admin\AdminGorevToplantiListe.aspx" />
     <Content Include="Admin\AdminIdariGorevUnvanlar.aspx" />
     <Content Include="Admin\AdminKullaniciKayit.aspx" />
     <Content Include="Admin\AdminOkul.aspx" />
@@ -158,6 +159,8 @@
     <Content Include="bin\System.Memory.dll" />
     <Content Include="bin\System.Numerics.Vectors.dll" />
     <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="Site\css\editor.bootstrap4.min.css" />
+    <Content Include="Site\css\editor.jqueryui.min.css" />
     <Content Include="Site\css\fSelect.css" />
     <Content Include="Site\Default.aspx" />
     <Content Include="bin\EntityFramework.dll" />
@@ -422,6 +425,7 @@
     <Content Include="Site\js\datatables.buttons.min-2.js" />
     <Content Include="Site\js\datatables.buttons.min.js" />
     <Content Include="Site\js\datatables.colreorder.min.js" />
+    <Content Include="Site\js\dataTables.editor.min.js" />
     <Content Include="Site\js\datatables.fixedcolumns.min.js" />
     <Content Include="Site\js\datatables.fixedheader.min.js" />
     <Content Include="Site\js\datatables.keytable.min.js" />
@@ -436,6 +440,8 @@
     <Content Include="Site\js\de.js" />
     <Content Include="Site\js\dropzone-amd-module.min.js" />
     <Content Include="Site\js\editable.js" />
+    <Content Include="Site\js\editor.bootstrap4.min.js" />
+    <Content Include="Site\js\editor.jqueryui.min.js" />
     <Content Include="Site\js\email-decode.min.js" />
     <Content Include="Site\js\excanvas.js" />
     <Content Include="Site\js\extension-btns-custom.js" />
@@ -2383,6 +2389,13 @@
     </Compile>
     <Compile Include="Admin\AdminGorev.aspx.designer.cs">
       <DependentUpon>AdminGorev.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminGorevToplantiListe.aspx.cs">
+      <DependentUpon>AdminGorevToplantiListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminGorevToplantiListe.aspx.designer.cs">
+      <DependentUpon>AdminGorevToplantiListe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminIdariGorevUnvanlar.aspx.cs">
       <DependentUpon>AdminIdariGorevUnvanlar.aspx</DependentUpon>

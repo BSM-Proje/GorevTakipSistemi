@@ -49,7 +49,7 @@
                     </li>
                     <li class="nav-item mail-section">
                         <a class="nav-link waves-effect d-block " data-toggle="pill" href="#e-approved" role="tab">
-                            <i class="icofont icofont-inbox" ></i>Onaylanan Görevler
+                            <i class="icofont icofont-inbox"></i>Onaylanan Görevler
                             <span class="label label-primary float-right" id="spanApproved"></span>
                         </a>
                     </li>
@@ -79,7 +79,7 @@
                             <button type="button" class="btn btn-warning btn-xs waves-effect waves-light" id="btnOnaylanmadi" runat="server" onserverclick="btnOnaylanmadi_OnServerClick">
                                 Yapılmadı <i class="fa fa-times-circle"></i>
                             </button>
-                            <button type="button" class="btn btn-danger btn-xs waves-effect waves-light">
+                            <button type="button" class="btn btn-danger btn-xs waves-effect waves-light" id="btnSil" runat="server" onserverclick="btnSil_OnServerClick">
                                 <i class="icofont icofont-ui-delete"></i>
                             </button>
                             <div class="btn-group dropdown-split-primary">
@@ -127,8 +127,10 @@
                                                         <div class="check-star">
                                                             <div class="checkbox-fade fade-in-primary checkbox">
                                                                 <label>
-                                                                    <input type="checkbox" value='<%#Eval("GorevId") %>' runat="server" id="cbxChecked" onclick="Check()">
+                                                                    <input type="checkbox" value='<%#Eval("GorevAtamaId") %>' runat="server" id="cbxChecked">
                                                                     <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+
+                                                                    <input type="hidden" value='<%#Eval("BildirimAtamaId") %>' runat="server" id="cbxHidden">
                                                                 </label>
                                                             </div>
                                                             <asp:Panel runat="server" ID="pnl">
@@ -153,9 +155,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <div class="tab-pane fade" id="e-trash" role="tabpanel">
                     <div class="mail-body">
                         <div class="mail-body-header">
@@ -190,40 +189,46 @@
                         <div class="mail-body-content">
                             <div class="table-responsive">
                                 <table class="table" id="tableTrash">
-                                    <tr class="unread">
-                                        <td>
-                                            <div class="check-star">
-                                                <div class="checkbox-fade fade-in-primary checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="">
-                                                        <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
-                                                    </label>
-                                                </div>
-                                                <i class="icofont icofont-star text-danger"></i>
-                                            </div>
-                                        </td>
-                                        <td><a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>BildirimDetay.aspx" class="email-name waves-effect">Rinky Behl</a></td>
-                                        <td><a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>BildirimDetay.aspx" class="email-name waves-effect">Photoshop updates are available</a></td>
-                                        <td class="email-attch"><a href="#"><i class="icofont icofont-clip"></i></a></td>
-                                        <td class="email-time">10:01 AM</td>
-                                    </tr>
-                                    <tr class="read">
-                                        <td>
-                                            <div class="check-star">
-                                                <div class="checkbox-fade fade-in-primary checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="">
-                                                        <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
-                                                    </label>
-                                                </div>
-                                                <i class="icofont icofont-star text-primary"></i>
-                                            </div>
-                                        </td>
-                                        <td><a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>BildirimDetay.aspx" class="email-name waves-effect">Harry John</a></td>
-                                        <td><a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>BildirimDetay.aspx" class="email-name waves-effect">New upcoming data available</a></td>
-                                        <td class="email-attch"><a href="#"><i class="icofont icofont-clip"></i></a></td>
-                                        <td class="email-time">11:01 AM</td>
-                                    </tr>
+                                    <thead>
+                                        <th></th>
+                                        <th hidden="">Gorev Id</th>
+                                        <th>Görev Adı</th>
+                                        <th>Görevin Son Tarihi</th>
+                                        <th>Bildirim İçeriği</th>
+                                        <th>Bildirim Gönderilme Tarihi</th>
+                                        <th>Görev Onay Durumu</th>
+                                    </thead>
+                                    <tbody>
+                                        <asp:ListView runat="server" ID="lvSilinenBildirimler">
+                                            <ItemTemplate>
+                                                <tr class="<%#Eval("BildirimOkumaDurum").Equals(true)?"read":"unread" %>">
+                                                    <td>
+                                                        <div class="check-star">
+                                                            <div class="checkbox-fade fade-in-primary checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value='<%#Eval("GorevAtamaId") %>' runat="server" id="cbxChecked2" onclick="Check()">
+                                                                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+
+                                                                    <input type="hidden" value='<%#Eval("BildirimAtamaId") %>' runat="server" id="cbxHidden2" onclick="Check()">
+                                                                </label>
+                                                            </div>
+                                                            <asp:Panel runat="server" ID="pnl">
+                                                            </asp:Panel>
+                                                        </div>
+                                                    </td>
+
+                                                    <td hidden><%#Eval("GorevId")%></td>
+                                                    <td><a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>BildirimDetay.aspx?bildirimId=<%# Eval("BildirimId") %>" class="email-name waves-effect"><%#Eval("GorevAdi") %></a></td>
+                                                    <td class="email-time"><%#Eval("GorevSonTarihSaat") %></td>
+                                                    <td><a href="/<%=Session["KullaniciTur"] %>/<%=Session["KullaniciTur"] %>BildirimDetay.aspx" class="email-name waves-effect">
+                                                        <%#Eval("BildirimIcerik").ToString().Length>25?Eval("BildirimIcerik").ToString().Substring(0,25)+"...":Eval("BildirimIcerik") %>
+                                                    </a></td>
+                                                    <td class="email-time"><%#Eval("BildirimGondermeTarih") %></td>
+                                                    <td><i class="<%#Eval("GorevOnayDurumu").Equals(true)?"fa fa-check text-success fa-2x":"fa fa-times-circle text-danger fa-2x" %>"></i></td>
+                                                </tr>
+                                            </ItemTemplate>
+                                        </asp:ListView>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -370,17 +375,6 @@
         </div>
     </div>
 </div>
-
-
-<script>
-    function Check() {
-        var cbx = document.querySelector("#cbxChecked");
-        if (cbx.checked) {
-            console.log("Hello");
-        }
-
-    }
-</script>
 
 
 <script>

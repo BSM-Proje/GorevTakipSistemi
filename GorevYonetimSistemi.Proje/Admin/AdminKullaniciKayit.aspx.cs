@@ -22,6 +22,8 @@ namespace GorevYonetimSistemi.Proje.Admin
         IslemlerDal<KullaniciTurAtama> _kullaniciTurAtamaDal = new IslemlerDal<KullaniciTurAtama>();
         MetotDal _metotDal=new MetotDal();
         SessionKontrol _sessionKontrol=new SessionKontrol();
+
+        string mesaj;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -32,7 +34,6 @@ namespace GorevYonetimSistemi.Proje.Admin
                 AnaBilimDalListele();
                 UnvanListele();
                 IdariGorevUnvanListele();
-                KullaniciTurListele();
 
                 IdariGorevUnvanListele();
                 int kullaniciTurId = Convert.ToInt32(Session["KullaniciTurId"]);
@@ -46,15 +47,8 @@ namespace GorevYonetimSistemi.Proje.Admin
 
         }
 
-        private void KullaniciTurListele()
-        {
-            var kullaniciTurListe = _kullaniciTurDal.Listele<KullaniciTur>();
-            selectKullaniciTur.DataSource = kullaniciTurListe;
-            selectKullaniciTur.DataTextField = "KullaniciTurAd";
-            selectKullaniciTur.DataValueField = "KullaniciTurId";
-            selectKullaniciTur.DataBind();
+        
 
-        }
 
         private void IdariGorevUnvanListele()
         {
@@ -110,7 +104,11 @@ namespace GorevYonetimSistemi.Proje.Admin
             lvKullanicilar.DataBind();
         }
 
-
+        private void Sonuc(string mesaj)
+        {
+            lblSonuc.Visible = true;
+            lblSonuc.InnerText = mesaj;
+        }
         protected void btnKullaniciKaydet_OnServerClick(object sender, EventArgs e)
         {
 
@@ -129,6 +127,8 @@ namespace GorevYonetimSistemi.Proje.Admin
 
             });
 
+            mesaj = "Kullanıcı kaydedildi";
+            Sonuc(mesaj);
             KullanicilariListele();
         }
 
@@ -136,6 +136,10 @@ namespace GorevYonetimSistemi.Proje.Admin
         {
             _kullaniciDal.Sil(Convert.ToInt32(kullaniciId.Value)
             );
+
+            mesaj = "Kullanıcı silindi";
+            Sonuc(mesaj);
+
             KullanicilariListele();
             
         }
@@ -156,6 +160,9 @@ namespace GorevYonetimSistemi.Proje.Admin
                 FkUnvanId = Convert.ToInt32(selectUnvan.Value),
                 FkIdariGorevUnvanId = Convert.ToInt32(selectIdariGorevUnvan.Value),
             });
+
+            mesaj = "Kullanıcı güncellendi";
+            Sonuc(mesaj);
             KullanicilariListele();
         }
     }

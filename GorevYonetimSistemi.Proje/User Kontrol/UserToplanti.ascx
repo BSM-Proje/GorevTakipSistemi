@@ -24,8 +24,7 @@
                 <li class="nav-item">
                     <a href="" data-target="#toplantiAtama"
                         data-toggle="tab" class="nav-link">
-                        <strong>Toplantı
-                Atama
+                        <strong>Toplantı Atama
                         </strong>
                     </a>
                 </li>
@@ -130,9 +129,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-2 label label-success" id="lblSonuc" runat="server" visible="False"></label>
                                             <div class="col-sm-6 ml-5">
-                                                <button runat="server" ID="btnDeneme"></button>
                                                 <button type="submit"
                                                     class="btn btn-primary m-b-0" runat="server" id="btnKaydet" onserverclick="btnKaydet_OnServerClick">
                                                     Kaydet
@@ -147,6 +144,8 @@
                                                     Temizle
                                                 </button>
                                             </div>
+                                            <label class="col-sm-3 label label-success" id="lblSonuc" runat="server" visible="False" style="height: 80%; font-size: 1.2rem;"></label>
+
                                         </div>
                                     </form>
                                 </div>
@@ -279,7 +278,10 @@
                                                 <button type="button" id="toplantiTemizle" class="btn waves-effect waves-light btn-secondary btn-square" onclick="toplantiDetayTemizle()">
                                                     Temizle
                                                 </button>
+
                                             </div>
+                                            <label class="col-sm-3 label label-success" id="lblToplantiDetaySonuc" runat="server" visible="False" style="height: 80%; font-size: 1.2rem;"></label>
+
                                         </div>
                                     </div>
                                 </div>
@@ -308,7 +310,7 @@
                                                     <ItemTemplate>
                                                         <tr>
                                                             <td hidden><%#Eval("ToplantiDetayId") %></td>
-                                                            <td hidden><%#Eval("ToplantiId") %></td>
+                                                            <td hidden><%#Eval("FkToplantiId") %></td>
                                                             <td><%#Eval("ToplantiAdi") %></td>
                                                             <td><%#Eval("ToplantiDurum") %></td>
                                                             <td><%#Eval("AlinanKararlar") %></td>
@@ -381,6 +383,7 @@
                                                     Temizle
                                                 </button>
                                             </div>
+                                            <label class="col-sm-3 label label-success" id="lbltoplantiAtamaSonuc" runat="server" visible="False" style="height: 80%; font-size: 1.2rem;"></label>
                                         </div>
                                     </div>
                                 </div>
@@ -406,7 +409,7 @@
                                                     <ItemTemplate>
                                                         <tr>
                                                             <td><%#Eval("ToplantiAdi") %></td>
-                                                            <td><%#Eval("IlgiliKisiler") %></td>
+                                                            <td><%#Eval("IlgiliKisi") %></td>
                                                             <td><%#Eval("AtayanKisi") %></td>
                                                         </tr>
                                                     </ItemTemplate>
@@ -452,6 +455,7 @@
             }).get();
 
             $("#toplantiDetayId").val(rowData[0]);
+            $("#toplantiId").val(rowData[1]);
             $("#selectToplantiDetayTa").val(rowData[2]).trigger("change");
             $("#inlineRadio1").val(rowData[3]);
             $("#toplantiSonAlKarar").val(rowData[4]);

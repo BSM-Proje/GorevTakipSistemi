@@ -10,6 +10,7 @@ namespace GorevYonetimSistemi.Proje.Admin
     {
         IslemlerDal<IdariGorevUnvan> _idariGorevUnvanDal = new IslemlerDal<IdariGorevUnvan>();
         SessionKontrol _sessionKontrol = new SessionKontrol();
+        private string mesaj;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -41,8 +42,8 @@ namespace GorevYonetimSistemi.Proje.Admin
 
 
             IdariGorevUnvanListele();
-            lblSonuc.Visible = true;
-            lblSonuc.InnerText = "Idari Görev Unvan Eklendi!";
+            mesaj = "Idari Görev Unvan Eklendi!";
+            Sonuc(mesaj);
         }
 
         protected void btnSil_OnServerClick(object sender, EventArgs e)
@@ -50,8 +51,8 @@ namespace GorevYonetimSistemi.Proje.Admin
             _idariGorevUnvanDal.Sil(int.Parse(idariGorevUnvanId.Value));
 
             IdariGorevUnvanListele();
-            lblSonuc.Visible = true;
-            lblSonuc.InnerText = "Idari Görev Unvan Silindi!";
+            mesaj= "Idari Görev Unvan Silindi!";
+            Sonuc(mesaj);
         }
 
         protected void btnGuncelle_OnServerClick(object sender, EventArgs e)
@@ -63,8 +64,14 @@ namespace GorevYonetimSistemi.Proje.Admin
             });
 
             IdariGorevUnvanListele();
+            mesaj= "Idari Görev Unvan Güncellendi!";
+            Sonuc(mesaj);
+        }
+
+        private void Sonuc(string mesaj)
+        {
             lblSonuc.Visible = true;
-            lblSonuc.InnerText = "Idari Görev Unvan Güncellendi!";
+            lblSonuc.InnerText = mesaj;
         }
     }
 }

@@ -10,17 +10,20 @@ namespace GorevYonetimSistemi.EntitySiniflar
     {
         private DateTime _tarih;
         public int BildirimId { get; set; }
+        public int bildirimAtamaId { get; set; }
         public string BildirimIcerik { get; set; }
         public bool BildirimOkumaDurum { get; set; }
-        public DateTime BildirimOkumaTarih { get; set; }
+        public DateTime? BildirimOkumaTarih { get; set; }
         public int BildirimHatirlatmaSayisi { get; set; }
+        public bool BildirimIptal { get; set; }
         public int GorevId { get; set; }
+        public int GorevAtamaId { get; set; }
         public string GorevAdi { get; set; }
         
         public string GorevIcerigi { get; set; }
         public bool GorevOnayDurumu { get; set; }
 
-        public DateTime GorevSonTarihSaat
+        public DateTime? GorevSonTarihSaat
         {
             get
             {
@@ -41,6 +44,6 @@ namespace GorevYonetimSistemi.EntitySiniflar
             }
         }
 
-        public DateTime BildirimGondermeTarih { get; set; }
+        public DateTime? BildirimGondermeTarih { get; set; }
     }
 }

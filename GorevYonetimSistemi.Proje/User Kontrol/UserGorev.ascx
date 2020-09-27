@@ -115,7 +115,7 @@
                                             <label class="col-sm-2"></label>
                                             <div class="col-sm-6">
                                                 <button type="submit"
-                                                    class="btn btn-primary m-b-0" runat="server" onserverclick="OnServerClick">
+                                                    class="btn btn-primary m-b-0" runat="server">
                                                     Kaydet
                                                 </button>
                                                 <button class="btn waves-effect waves-light btn-danger btn-square">
@@ -128,6 +128,8 @@
                                                     Temizle
                                                 </button>
                                             </div>
+                                            <label class="col-sm-3 label label-success" id="lblGorevSonuc" runat="server" visible="False" style="height: 80%; font-size: 1.2rem;"></label>
+
                                         </div>
                                     </form>
                                 </div>
@@ -227,6 +229,8 @@
                                                     Temizle
                                                 </button>
                                             </div>
+                                            <label class="col-sm-3 label label-success" id="lblGorevAtamaSonuc" runat="server" visible="False" style="height: 80%; font-size: 1.2rem;"></label>
+
                                         </div>
                                     </div>
                                 </div>
@@ -237,11 +241,13 @@
                                     <h5>Görev Atama Listesi</h5>
                                 </div>
                                 <div class="card-block">
-                                    <div class="dt-responsive table-responsive">
+                                    <div class="dt-responsive table-responsive ">
                                         <table id="row-select"
-                                            class="table table-striped table-bordered nowrap">
+                                            class="table table-striped table-bordered nowrap w-100">
                                             <thead>
                                                 <tr>
+                                                    <th hidden>Görev Id</th>
+                                                    <th>Görev Adı</th>
                                                     <th>Atanan Kişi</th>
                                                     <th>Atayan Kişi</th>
                                                 </tr>
@@ -250,7 +256,8 @@
                                                 <asp:ListView runat="server" ID="lvGorevAtama">
                                                     <ItemTemplate>
                                                         <tr>
-
+                                                            <td hidden><%#Eval("GorevId") %></td>
+                                                            <td><%#Eval("GorevAdi") %></td>
                                                             <td><%#Eval("AtananKisi") %></td>
                                                             <td><%#Eval("AtayanKisi") %></td>
                                                         </tr>

@@ -13,6 +13,8 @@ namespace GorevYonetimSistemi.Proje.Admin
     {
         IslemlerDal<Okul> _okulDal = new IslemlerDal<Okul>();
         SessionKontrol _sessionKontrol=new SessionKontrol();
+
+        string mesaj;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -29,6 +31,7 @@ namespace GorevYonetimSistemi.Proje.Admin
             }
         }
 
+        
         private void OkulListele()
         {
             var okulListe = _okulDal.Listele<Okul>();
@@ -42,12 +45,24 @@ namespace GorevYonetimSistemi.Proje.Admin
             {
                 OkulAdi = tbxOkulAd.Value
             });
+
+            mesaj = "Okul kaydedildi";
+            Sonuc(mesaj);
             OkulListele();
+        }
+
+        private void Sonuc(string mesaj)
+        {
+            lblSonuc.Visible = true;
+            lblSonuc.InnerText = mesaj; 
         }
 
         protected void btnSil_OnServerClick(object sender, EventArgs e)
         {
             _okulDal.Sil(Convert.ToInt32(tbxOkulId.Value));
+
+            mesaj = "Okul silindi";
+            Sonuc(mesaj);
             OkulListele();
         }
 
@@ -57,8 +72,11 @@ namespace GorevYonetimSistemi.Proje.Admin
             _okulDal.Guncelle(new Okul
             {
                 OkulId = Convert.ToInt32(tbxOkulId.Value),
+
                 OkulAdi = tbxOkulAd.Value
             });
+            mesaj = "Okul güncellendi";
+            Sonuc(mesaj);
             OkulListele();
         }
     }

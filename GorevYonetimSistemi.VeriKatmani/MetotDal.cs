@@ -10,7 +10,7 @@ namespace GorevYonetimSistemi.VeriKatmani
 {
     public class MetotDal : IMetotDal
     {
-        
+
         public List<KullaniciTurModel> KullaniciTurListe(int kisiId, int kullaniciTurId)
         {
 
@@ -36,18 +36,19 @@ namespace GorevYonetimSistemi.VeriKatmani
 
         public List<ToplantiDetayModel> ToplantiDetay(int? toplantiId)
         {
-            
+
             using (EntityContext context = new EntityContext())
             {
                 List<ToplantiDetayModel> toplantiDetayListe;
-                if (toplantiId != null)
+                if (toplantiId == null)
                 {
                     toplantiDetayListe = context.Database.SqlQuery<ToplantiDetayModel>("ToplantiDetayListe").ToList();
                     return toplantiDetayListe;
                 }
                 else
                 {
-                    toplantiDetayListe = context.Database.SqlQuery<ToplantiDetayModel>("ToplantiDetayListe").Where(p=>p.ToplantiId==toplantiId).ToList();
+                    toplantiDetayListe = context.Database.SqlQuery<ToplantiDetayModel>("ToplantiDetayListe")
+                        .Where(p => p.FkToplantiId == toplantiId).ToList();
                     return toplantiDetayListe;
                 }
             }
@@ -106,8 +107,69 @@ namespace GorevYonetimSistemi.VeriKatmani
                 var tanimListe = context.Tanimlar.Where(p => p.FkKullaniciTurId == kullaniciTurId).ToList();
                 return tanimListe;
             }
-            
+
         }
+
+        public List<object> ToplantıAtamaGrup()
+        {
+            
+            var toplantiAtamaListe = ToplantiAtama();
+            IEnumerable<object> sorgu = (from t in toplantiAtamaListe
+                    group t by new
+                    {
+                        ToplantiId = t.ToplantiId,
+                        ToplantiAdi = t.ToplantiAdi,
+                        AtayanKisi = t.AtayanKisi
+                    }
+                    into g
+                    select new
+                    {
+                        ToplantiId = g.Key.ToplantiId,
+                        ToplantiAdi = g.Key.ToplantiAdi,
+                        Data = g.AsEnumerable(),
+                        AtayanKisi = g.Key.AtayanKisi
+                    }).ToList()
+                .Select(p => new
+                {
+                    ToplantiId = p.ToplantiId,
+                    ToplantiAdi = p.ToplantiAdi,
+                    IlgiliKisi = p.Data.Aggregate("", (acc, t) => (acc == "" ? "" : acc + ", ") + t.IlgiliKisi),
+                    AtayanKisi = p.AtayanKisi
+                });
+            List<object> _toplantiAtamaModel = new List<object>(sorgu);
+            return _toplantiAtamaModel;
+        }
+
+        public List<object> GorevAtamaGrup()
+        {
+            var gorevAtamaListe = GorevAtama();
+            IEnumerable<object> sorgu = (from g in gorevAtamaListe
+                    group g by new
+                    {
+                        GorevId = g.GorevId,
+                        GorevAdi = g.GorevAdi,
+                        AtayanKisi = g.AtayanKisi,
+                    }
+                    into g
+                    select new
+                    {
+                        GorevId = g.Key.GorevId,
+                        GorevAdi = g.Key.GorevAdi,
+                        Data = g.AsEnumerable(),
+                        AtayanKisi = g.Key.AtayanKisi,
+                    }).ToList()
+                .Select(p => new
+                {
+                    GorevId = p.GorevId,
+                    GorevAdi = p.GorevAdi,
+                    AtananKisi = p.Data.Aggregate("", (acc, t) => (acc == "" ? "" : acc + ", ") + t.AtananKisi),
+                    AtayanKisi = p.AtayanKisi
+                });
+            List<object> _gorevAtamaModel = new List<object>(sorgu);
+            return _gorevAtamaModel;
+
+        }
+
 
         public List<BildirimAtamaModel> BildirimDetay(int kisiId, int bildirimId)
         {
@@ -130,6 +192,7 @@ namespace GorevYonetimSistemi.VeriKatmani
                 return bildirimDetay;
             }
         }
+
 
     }
 }

@@ -9,9 +9,13 @@ namespace GorevYonetimSistemi.EntitySiniflar
 {
     public class ToplantiAtamaModel
     {
+        public int ToplantiId { get; set; }
+        public int ToplantiAtamaId { get; set; }
         public string ToplantiAdi { get; set; }
-        public string IlgiliKisiler { get; set; }
+        public DateTime ToplantiTarihSaat { get; set; }
+        public string ToplantiYeri { get; set; }
+        public string IlgiliKisi { get; set; }
         public string AtayanKisi { get; set; }
-        
+
     }
 }

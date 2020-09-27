@@ -19,11 +19,5 @@ namespace GorevYonetimSistemi.EntitySiniflar
 
         public string Icerik { get; set; }
 
-        public bool BildirimOkumaDurum { get; set; }
-        public DateTime? BildirimOkumaTarih { get; set; }
-        public int HatirlatmaSayisi { get; set; }
-
-
-
     }
 }

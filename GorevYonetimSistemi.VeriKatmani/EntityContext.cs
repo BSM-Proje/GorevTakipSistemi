@@ -12,7 +12,6 @@ namespace GorevYonetimSistemi.VeriKatmani
     {
         public EntityContext():base("EntityContext")
         {
-            Database.SetInitializer(new DataInitializer());
         }
 
         public DbSet<AnaBilimDal> AnaBilimDallar { get; set; }
@@ -32,6 +31,11 @@ namespace GorevYonetimSistemi.VeriKatmani
         public DbSet<BildirimAtama> BildirimAtama { get; set; }
         public DbSet<Tanim> Tanimlar { get; set; }
 
-       
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<EntityContext>(null);
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
 }

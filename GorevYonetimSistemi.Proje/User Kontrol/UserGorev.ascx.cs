@@ -13,6 +13,7 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         IslemlerDal<Bildirim> _bildirimDal = new IslemlerDal<Bildirim>();
         IslemlerDal<BildirimAtama> _bildirimAtamaDal = new IslemlerDal<BildirimAtama>();
 
+        string mesaj;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -35,7 +36,7 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
 
         private void GorevAtamaListele()
         {
-            var gorevAtamaListe = _metotDal.GorevAtama();
+            var gorevAtamaListe = _metotDal.GorevAtamaGrup();
             lvGorevAtama.DataSource = gorevAtamaListe;
             lvGorevAtama.DataBind();
         }
@@ -53,20 +54,28 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
 
         }
 
-        protected void OnServerClick(object sender, EventArgs e)
+        private void Sonuc(string mesaj, int tab)
         {
+            if (tab == 1)
+            {
+                lblGorevSonuc.Visible = true;
+                lblGorevSonuc.InnerText = mesaj;
+            }
+            else if (tab == 2)
+            {
+                lblGorevSonuc.Visible = true;
+                lblGorevSonuc.InnerText = mesaj;
+            }
         }
 
         protected void btnGorevAtamaKaydet_OnServerClick(object sender, EventArgs e)
         {
-            
             var atayanKisiId = Session["KullaniciId"];
 
             for (int i = 0; i < tbxIlgiliKisiler.Value.Split(',').Length; i++)
             {
                 _gorevAtamaDal.Ekle(new Atama
                 {
-                   
                     FkKisiId = Convert.ToInt32(tbxIlgiliKisiler.Value.Split(',')[i]),
                     FkGorevId = Convert.ToInt32(selectGorevAtama.Value),
                     FkAtayanKisiId = int.Parse(atayanKisiId.ToString())
@@ -76,18 +85,7 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
                 {
                     Icerik = selectGorevAtama.Items[selectGorevAtama.SelectedIndex].Text,
                     FkGorevId = Convert.ToInt32(selectGorevAtama.Value),
-                    
-                    
                 });
-
-
-                _bildirimAtamaDal.Ekle(new BildirimAtama()
-                {
-
-                });
-
-
-
 
             }
 

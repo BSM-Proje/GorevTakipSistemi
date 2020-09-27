@@ -1,8 +1,10 @@
 ﻿using GorevYonetimSistemi.EntitySiniflar;
 using GorevYonetimSistemi.VeriKatmani;
 using System;
+using System.Linq;
 using System.Net.Mail;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace GorevYonetimSistemi.Proje.User_Kontrol
 {
@@ -13,6 +15,8 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         IslemlerDal<ToplantiAtama> _toplantiAtamaDal = new IslemlerDal<ToplantiAtama>();
         IslemlerDal<Kullanici> _kullaniciDal = new IslemlerDal<Kullanici>();
         private MetotDal _metotDal = new MetotDal();
+
+        string mesaj;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,6 +31,7 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
 
         }
 
+
         private void KisileriListele()
         {
             var kisiListe = _kullaniciDal.Listele<Kullanici>();
@@ -39,8 +44,8 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
 
         private void ToplantiAtamaListe()
         {
-            var toplantiAtamaListe = _metotDal.ToplantiAtama();
-            lvToplantiAtama.DataSource = toplantiAtamaListe;
+            var liste = _metotDal.ToplantıAtamaGrup();
+            lvToplantiAtama.DataSource = liste;
             lvToplantiAtama.DataBind();
         }
 
@@ -74,17 +79,38 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
 
         }
 
+        private void Sonuc(string mesaj, int tab)
+        {
+            if (tab == 1)
+            {
+                lblSonuc.Visible = true;
+                lblSonuc.InnerText = mesaj;
+            }
+            else if (tab == 2)
+            {
+                lblSonuc.Visible = true;
+                lblSonuc.InnerText = mesaj;
+            }
+            else if (tab == 3)
+            {
+                lblSonuc.Visible = true;
+                lblSonuc.InnerText = mesaj;
+            }
+
+        }
         protected void btnKaydet_OnServerClick(object sender, EventArgs e)
         {
-            lblSonuc.Visible = true;
+
             _toplantiDal.Ekle(new Toplanti
             {
                 ToplantiAdi = tbxToplantiAdi.Value,
                 ToplantiIcerigi = taToplantiIcerigi.Value,
                 Yer = tbxToplantiYeri.Value
             });
+            mesaj = "Toplantı kaydedildi";
+            Sonuc(mesaj, 1);
             ToplantiListe();
-            lblSonuc.InnerText = "Kayıt başarılı!";
+
         }
 
         protected void btnDetayKaydet_OnServerClick(object sender, EventArgs e)
@@ -96,27 +122,33 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
                 ToplantiDurum = true,
             });
 
+            mesaj = "Toplantı detay kaydedildi";
+            Sonuc(mesaj, 2);
             ToplantiDetayListe();
         }
 
         protected void btnDetaySil_OnServerClick(object sender, EventArgs e)
         {
             _toplantiDetayDal.Sil(int.Parse(toplantiDetayId.Value));
+            mesaj = "Toplantı detay silindi";
+            Sonuc(mesaj, 2);
             ToplantiDetayListe();
         }
 
         protected void btnSil_OnServerClick(object sender, EventArgs e)
         {
-            lblSonuc.Visible = true;
+
             _toplantiDal.Sil(int.Parse(toplantiId.Value));
+            mesaj = "Toplantı silindi";
+            Sonuc(mesaj, 1);
             ToplantiListe();
 
-            lblSonuc.InnerText = "Kayıt Silindi!";
+
         }
 
         protected void btnGuncelle_OnServerClick(object sender, EventArgs e)
         {
-            lblSonuc.Visible = true;
+
             _toplantiDal.Guncelle(new Toplanti()
             {
                 ToplantiId = int.Parse(toplantiId.Value),
@@ -125,7 +157,8 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
                 Yer = tbxToplantiYeri.Value
             });
 
-            lblSonuc.InnerText = "Kayıt Güncellendi!";
+            mesaj = "Toplantı güncellendi";
+            Sonuc(mesaj, 1);
             ToplantiListe();
         }
 
@@ -139,13 +172,15 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
                 ToplantiDurum = true
             });
 
+            mesaj = "Toplantı detay güncellendi";
+            Sonuc(mesaj, 2);
             ToplantiDetayListe();
         }
 
         protected void btnAtamaKaydet_OnServerClick(object sender, EventArgs e)
         {
             var atayanKisiId = Session["KullaniciId"];
-            
+
             for (int i = 0; i < tbxIlgiliKisiler.Value.Split(',').Length; i++)
             {
                 int fkIlgiliKisiId = Convert.ToInt32(tbxIlgiliKisiler.Value.Split(',')[i]);
@@ -155,19 +190,18 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
                     FkToplantiId = Convert.ToInt32(selectToplantiAtamaTa.Value),
                     FkAtayanKisiId = int.Parse(atayanKisiId.ToString())
                 });
-                var kisi = _kullaniciDal.Listele<Kullanici>().Find(p=>p.KisiId == fkIlgiliKisiId);
+                var kisi = _kullaniciDal.Listele<Kullanici>().Find(p => p.KisiId == fkIlgiliKisiId);
                 var toplanti = _toplantiDal.Listele<Toplanti>().Find(t => t.ToplantiId == int.Parse(selectToplantiAtamaTa.Value));
-                MailGonder(kisi.Email, toplanti.ToplantiAdi, toplanti.SonTarihSaat,toplanti.Yer);
-                
+                MailGonder(kisi.Email, toplanti.ToplantiAdi, toplanti.SonTarihSaat, toplanti.Yer);
+
             }
 
-
-            lblSonuc.Visible = true;
-            lblSonuc.InnerText = tbxIlgiliKisiler.Value;
+            mesaj = "Toplantı atama kaydedildi";
+            Sonuc(mesaj, 3);
 
             ToplantiAtamaListe();
 
-            
+
 
         }
 
@@ -187,7 +221,7 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
-                
+
             }
             catch (Exception ex)
             {

@@ -9,7 +9,7 @@ namespace GorevYonetimSistemi.EntitySiniflar
     public class ToplantiDetayModel
     {
         public int ToplantiDetayId { get; set; }
-        public int ToplantiId { get; set; }
+        public int FkToplantiId { get; set; }
         public string ToplantiAdi { get; set; }
         public bool ToplantiDurum { get; set; }
         public string AlinanKararlar { get; set; }

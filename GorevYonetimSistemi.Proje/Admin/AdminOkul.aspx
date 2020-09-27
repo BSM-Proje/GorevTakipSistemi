@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/Site/css/widget.css">
     <link rel="stylesheet" type="text/css" href="/Site/css/datatables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="/Site/css/buttons.datatables.min.css">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <div class="row">
@@ -40,10 +41,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-2"></label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-5">
                                                 <button runat="server" id="btnKaydet" type="button"
-                                                    class="btn btn-primary m-b-0" OnServerClick="btnKaydet_OnServerClick">
+                                                    class="btn btn-primary m-b-0" OnServerClick="btnKaydet_OnServerClick" data-type="inverse" data-from="top" data-align="center" data-icon="fa fa-comments">
                                                     Kaydet
                                                 </button>
                                                 <button runat="server" id="btnSil" type="button" class="btn waves-effect waves-light btn-danger btn-square" OnServerClick="btnSil_OnServerClick">
@@ -52,10 +52,11 @@
                                                 <button  runat="server" id="btnGuncelle" type="button" class="btn waves-effect waves-light btn-warning btn-square" OnServerClick="btnGuncelle_OnServerClick">
                                                     Güncelle
                                                 </button>
-                                                <button id="OkulTemizle" name="OkulTemizle" class="btn waves-effect waves-light btn-secondary btn-square">
+                                                <button id="OkulTemizle" type="button" name="OkulTemizle" class="btn waves-effect waves-light btn-secondary btn-square" onclick="okulTemizle()">
                                                     Temizle
                                                 </button>
                                             </div>
+                                            <label class="col-sm-3 label label-success" id="lblSonuc" runat="server" visible="False" style="height: 80%; font-size: 1.2rem;"></label>
                                         </div>
                                     </form>
                                 </div>
@@ -113,14 +114,23 @@
                 $("#tbxOkulAd").val(rowData[1]);
 
             });
-
-            $("#OkulTemizle").on('click', function () {
-
-                $("#tbxOkulId").val();
-                $("#tbxOkulAd").val();
-
-            });
+            
 
         });
+        var okulTemizle = function () {
+            $("#tbxOkulId").val("");
+            $("#tbxOkulAd").val("");
+        };
+
+        window.onload = function () {
+            var seconds = 5;
+            setTimeout(function () {
+                    document.getElementById("<%=lblSonuc.ClientID %>").style.display = "none";
+                },
+                seconds * 1000);
+        }
+
     </script>
+
+
 </asp:Content>

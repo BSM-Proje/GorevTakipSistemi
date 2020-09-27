@@ -21,7 +21,7 @@ namespace GorevYonetimSistemi.EntitySiniflar
         public string GorevAdi { get; set; }
         public string GorevIcerigi { get; set; }
 
-        public DateTime SonTarihSaat
+        public DateTime? SonTarihSaat
         {
             get
             {
@@ -32,8 +32,6 @@ namespace GorevYonetimSistemi.EntitySiniflar
                 _sonTarihSaat = value;
             }
         }
-
-        public bool Durum { get; set; }
 
     }
 }

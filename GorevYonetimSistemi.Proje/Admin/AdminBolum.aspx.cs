@@ -14,6 +14,8 @@ namespace GorevYonetimSistemi.Proje.Admin
         IslemlerDal<Bolum> _bolumDal = new IslemlerDal<Bolum>();
         IslemlerDal<Okul> _okulDal = new IslemlerDal<Okul>();
         SessionKontrol _sessionKontrol=new SessionKontrol();
+
+        string mesaj;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -49,10 +51,17 @@ namespace GorevYonetimSistemi.Proje.Admin
             lvBolum.DataBind();
         }
 
+        private void Sonuc(string mesaj)
+        {
+            lblBolumSonuc.Visible = true;
+            lblBolumSonuc.InnerText = mesaj;
+        }
         protected void btnSil_OnServerClick(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(tbxBolumId.Value);
             _bolumDal.Sil(id);
+            mesaj = "Bölüm silindi";
+            Sonuc(mesaj);
             BolumListele();
         }
 
@@ -63,6 +72,8 @@ namespace GorevYonetimSistemi.Proje.Admin
                 BolumAdi = tbxBolumAd.Value,
                 FkOkulId = 1
             });
+            mesaj = "Bölüm kaydedildi";
+            Sonuc(mesaj);
             BolumListele();
         }
 
@@ -75,6 +86,8 @@ namespace GorevYonetimSistemi.Proje.Admin
                 FkOkulId = 1
 
             });
+            mesaj = "Bölüm güncellendi";
+            Sonuc(mesaj);
             BolumListele();
         }
     }

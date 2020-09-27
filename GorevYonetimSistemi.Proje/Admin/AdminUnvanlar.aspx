@@ -36,9 +36,6 @@
                             </div>
                         </div>
 
-
-
-
                         <div class="form-group row text-center ml-5">
 
 
@@ -59,8 +56,7 @@
                                 </button>
                                 
                             </div>
-                            <label class="col-sm-2 badge badge-success" id="lblSonuc" runat="server" visible="False"></label>
-                            
+                            <label class="col-sm-3 label label-success" id="lblSonuc" runat="server" visible="False" style="height: 80%; font-size: 1.2rem;"></label>                            
                         </div>
                     </div>
                 </div>

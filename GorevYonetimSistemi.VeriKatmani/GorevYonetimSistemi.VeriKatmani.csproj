@@ -112,7 +112,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataInitializer.cs" />
     <Compile Include="EntityContext.cs" />
     <Compile Include="IIslemlerDal.cs" />
     <Compile Include="IMetotDal.cs" />

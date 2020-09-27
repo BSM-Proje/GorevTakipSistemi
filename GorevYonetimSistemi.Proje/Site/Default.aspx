@@ -18,12 +18,12 @@
 
     <div class="row">
         <div class="col-xl-12 mt-2">
-            <div class="alert alert-danger background-danger">
+            <div class="alert alert-danger background-danger" style="display:<%=Int32.Parse(Session["OkunmayanBildirimSayisi"].ToString()).Equals(0)?"none":"block" %>">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="icofont icofont-close-line-circled"></i>
                 </button>
                 <p class="text-center">
-                    <strong>5</strong> adet okunmayan mesajınız var!
+                    <%=Int32.Parse(Session["OkunmayanBildirimSayisi"].ToString()) == 0?"":Session["OkunmayanBildirimSayisi"] +" adet okunmayan mesajınız var!" %>
                 </p>
             </div>
         </div>
@@ -51,8 +51,8 @@
                             <i class="fa fa-file-text text-c-blue f-18"></i>
                         </div>
                         <div class="col pt-2">
-                            <h6 class="m-b-5 text-white">İmzalanmayan evrak adedi</h6>
-                            <h3 class="m-b-0 f-w-700 text-white">5</h3>
+                            <h6 class="m-b-5 text-white">Onaylanmayan görev sayısı</h6>
+                            <h3 class="m-b-0 f-w-700 text-white"><%=int.Parse(Session["GorevSayisi"].ToString())==0?"-":Session["GorevSayisi"] %></h3>
                         </div>
                         
                     </div>

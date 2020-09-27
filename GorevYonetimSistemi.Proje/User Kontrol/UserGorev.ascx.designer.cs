@@ -69,6 +69,15 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         protected global::System.Web.UI.HtmlControls.HtmlInputText sonSaat;
 
         /// <summary>
+        /// lblGorevSonuc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblGorevSonuc;
+
+        /// <summary>
         /// dlGorev control.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace GorevYonetimSistemi.Proje.User_Kontrol
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnGorevAtamaKaydet;
+
+        /// <summary>
+        /// lblGorevAtamaSonuc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblGorevAtamaSonuc;
 
         /// <summary>
         /// lvGorevAtama control.

@@ -13,6 +13,7 @@ namespace GorevYonetimSistemi.Proje.Admin
     {
         IslemlerDal<Unvan> _unvanDal = new IslemlerDal<Unvan>();
         SessionKontrol _sessionKontrol = new SessionKontrol();
+        private string mesaj;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -43,8 +44,8 @@ namespace GorevYonetimSistemi.Proje.Admin
             });
 
             UnvanListele();
-            lblSonuc.Visible = true;
-            lblSonuc.InnerText = "Unvan Eklendi";
+            mesaj= "Unvan Eklendi";
+            Sonuc(mesaj);
         }
     
         protected void btnUnvanSil_OnServerClick(object sender, EventArgs e)
@@ -52,8 +53,8 @@ namespace GorevYonetimSistemi.Proje.Admin
             _unvanDal.Sil(int.Parse(unvanId.Value));
 
             UnvanListele();
-            lblSonuc.Visible = true;
-            lblSonuc.InnerText = "Unvan Silindi!";
+            mesaj= "Unvan Silindi!";
+            Sonuc(mesaj);
         }
 
         protected void btnUnvanGuncelle_OnServerClick(object sender, EventArgs e)
@@ -65,8 +66,14 @@ namespace GorevYonetimSistemi.Proje.Admin
             });
 
             UnvanListele();
+            mesaj= "Unvan Güncellendi!";
+            Sonuc(mesaj);
+        }
+
+        private void Sonuc(string mesaj)
+        {
             lblSonuc.Visible = true;
-            lblSonuc.InnerText = "Unvan Güncellendi!";
+            lblSonuc.InnerText = mesaj;
         }
     }
 }
